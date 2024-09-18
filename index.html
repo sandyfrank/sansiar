@@ -64,6 +64,10 @@
         <p data-key="car_rental_desc">Book a car with SANSIAR for a period that suits your needs.</p>
 
 	<form id="car-rental-form" action="https://formspree.io/f/xblrendr" method="POST">
+	
+	    <!-- Hidden input for Formspree -->
+	    <input type="hidden" name="_next" value="https://sandyfrank.github.io/sansiar">
+
 	    <label for="name">Name:</label>
 	    <input type="text" id="name" name="name" required>
 
