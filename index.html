@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANSIAR - Transport, Real Estate, International Trade, Import-Export</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.jpeg" alt="SANSIAR Logo">
+            </div>
+            <div class="language-switcher">
+                <button id="en-btn">EN</button>
+                <button id="fr-btn">FR</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" data-key="home">Home</a></li>
+                <li><a href="#services" data-key="services">Services</a></li>
+                <li><a href="#car-rental" data-key="car_rental">Car Rental</a></li>
+                <li><a href="#about" data-key="about">About Us</a></li>
+                <li><a href="#contact" data-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1 data-key="welcome">Welcome to SANSIAR</h1>
+        <p data-key="intro">Your trusted partner in Transport, Real Estate, International Trade, and Import-Export.</p>
+    </section>
+
+    <section id="services">
+        <h2 data-key="our_services">Our Services</h2>
+        <div class="service">
+            <img src="transport.jpg" alt="Transport Service">
+            <h3 data-key="transport">Transport</h3>
+            <p data-key="transport_desc">Providing reliable transport solutions for all your needs.</p>
+        </div>
+        <div class="service">
+            <img src="realestate.jpg" alt="Real Estate Service">
+            <h3 data-key="real_estate">Real Estate</h3>
+            <p data-key="real_estate_desc">Expert real estate services to help you find your dream property.</p>
+        </div>
+        <div class="service">
+            <img src="international_trade.jpg" alt="International Trade">
+            <h3 data-key="international_trade">International Trade</h3>
+            <p data-key="international_trade_desc">Facilitating international orders and deliveries efficiently.</p>
+        </div>
+        <div class="service">
+            <img src="import_export.jpg" alt="Import Export">
+            <h3 data-key="import_export">Import-Export</h3>
+            <p data-key="import_export_desc">Your go-to experts for seamless import and export processes.</p>
+        </div>
+    </section>
+
+    <!-- Car Rental Section -->
+    <section id="car-rental">
+        <h2 data-key="car_rental_title">Car Rental</h2>
+        <p data-key="car_rental_desc">Book a car with SANSIAR for a period that suits your needs.</p>
+
+	<form id="car-rental-form" action="https://formspree.io/f/xblrendr" method="POST">
+	    <label for="name">Name:</label>
+	    <input type="text" id="name" name="name" required>
+
+	    <label for="phone">Phone:</label>
+	    <input type="text" id="phone" name="phone" required>
+
+	    <label for="start-date">Start Date:</label>
+	    <input type="date" id="start-date" name="start-date" required>
+
+	    <label for="start-time">Start Time:</label>
+	    <input type="time" id="start-time" name="start-time" required>
+
+	    <label for="end-date">End Date:</label>
+	    <input type="date" id="end-date" name="end-date" required>
+
+	    <label for="end-time">End Time:</label>
+	    <input type="time" id="end-time" name="end-time" required>
+
+	    <label for="car-type">Car Type:</label>
+	    <select id="car-type" name="car-type">
+		<option value="sedan">Sedan</option>
+		<option value="suv">SUV</option>
+		<option value="truck">Truck</option>
+	    </select>
+
+	    <button type="submit">Book Now</button>
+	</form>
+
+
+    </section>
+
+    <section id="about">
+        <h2 data-key="about_us">About Us</h2>
+        <p data-key="about_desc">SANSIAR is a dynamic company offering innovative solutions in various fields such as transport, real estate, international trade, and import-export. We are dedicated to delivering top-quality services tailored to meet the needs of our clients.</p>
+    </section>
+
+    <section id="contact">
+        <h2 data-key="contact_us">Contact Us</h2>
+        <p data-key="inquiries">For inquiries, please reach out to us at:</p>
+        <p>Email: info@sansiar.com</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SANSIAR. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
