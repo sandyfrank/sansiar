@@ -63,38 +63,38 @@
         <h2 data-key="car_rental_title">Car Rental</h2>
         <p data-key="car_rental_desc">Book a car with SANSIAR for a period that suits your needs.</p>
 
-	<form id="car-rental-form" action="https://formspree.io/f/xblrendr" method="POST">
-	
-	    <!-- Hidden input for Formspree -->
-	    <input type="hidden" name="_next" value="https://sandyfrank.github.io/sansiar">
+	<!-- Car Rental Form -->
+	    <form id="car-rental-form" action="https://formspree.io/f/xblrendr" method="POST">
+		<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+		
+		<label for="name" data-key="name">Name:</label>
+		<input type="text" id="name" name="name" required>
 
-	    <label for="name">Name:</label>
-	    <input type="text" id="name" name="name" required>
+		<label for="phone" data-key="phone">Phone:</label>
+		<input type="text" id="phone" name="phone" required>
 
-	    <label for="phone">Phone:</label>
-	    <input type="text" id="phone" name="phone" required>
+		<label for="start-date" data-key="start_date">Start Date:</label>
+		<input type="date" id="start-date" name="start-date" required>
 
-	    <label for="start-date">Start Date:</label>
-	    <input type="date" id="start-date" name="start-date" required>
+		<label for="start-time" data-key="start_time">Start Time:</label>
+		<input type="time" id="start-time" name="start-time" required>
 
-	    <label for="start-time">Start Time:</label>
-	    <input type="time" id="start-time" name="start-time" required>
+		<label for="end-date" data-key="end_date">End Date:</label>
+		<input type="date" id="end-date" name="end-date" required>
 
-	    <label for="end-date">End Date:</label>
-	    <input type="date" id="end-date" name="end-date" required>
+		<label for="end-time" data-key="end_time">End Time:</label>
+		<input type="time" id="end-time" name="end-time" required>
 
-	    <label for="end-time">End Time:</label>
-	    <input type="time" id="end-time" name="end-time" required>
+		<label for="car-type" data-key="car_type">Car Type:</label>
+		<select id="car-type" name="car-type">
+		    <option value="sedan" data-key="sedan">Sedan</option>
+		    <option value="suv" data-key="suv">SUV</option>
+		    <option value="truck" data-key="truck">Truck</option>
+		</select>
 
-	    <label for="car-type">Car Type:</label>
-	    <select id="car-type" name="car-type">
-		<option value="sedan">Sedan</option>
-		<option value="suv">SUV</option>
-		<option value="truck">Truck</option>
-	    </select>
+		<button type="submit" data-key="book_now">Book Now</button>
+	    </form>
 
-	    <button type="submit">Book Now</button>
-	</form>
 
 
     </section>
@@ -116,4 +116,3 @@
     </footer>
 </body>
 </html>
-
