@@ -84,34 +84,29 @@ function switchLanguage(lang) {
 }
 
 // Car Rental form submission logic
-const form = document.getElementById('car-rental-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Collect form data
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const startDate = document.getElementById('start-date').value;
-    const startTime = document.getElementById('start-time').value;
-    const endDate = document.getElementById('end-date').value;
-    const endTime = document.getElementById('end-time').value;
-    const carType = document.getElementById('car-type').value;
-
-    // Create CSV content
-    const csvContent = `Name,Phone,Start Date, Start Time, End Date, End Time, Car Type\n${name},${phone},${startDate},${startTime},${endDate},${endTime},${carType}`;
-
-    // Create a download link for the CSV file
-    const link = document.createElement('a');
-    link.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent));
-    link.setAttribute('download', 'car_rental_reservations.csv');
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    // Clear the form after submission
-    form.reset();
-
-    alert('Car rental booked successfully! The data has been saved.');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('car-rental-form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Thank you for your submission!');
+                form.reset();
+            } else {
+                alert('There was a problem with your submission.');
+            }
+        }).catch(error => {
+            alert('There was a problem with your submission.');
+        });
+    });
 });
 
