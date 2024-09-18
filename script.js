@@ -92,11 +92,13 @@ form.addEventListener('submit', (e) => {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const startDate = document.getElementById('start-date').value;
+    const startTime = document.getElementById('start-time').value;
     const endDate = document.getElementById('end-date').value;
+    const endTime = document.getElementById('end-time').value;
     const carType = document.getElementById('car-type').value;
 
     // Create CSV content
-    const csvContent = `Name,Phone,Start Date,End Date,Car Type\n${name},${phone},${startDate},${endDate},${carType}`;
+    const csvContent = `Name,Phone,Start Date, Start Time, End Date, End Time, Car Type\n${name},${phone},${startDate},${StartTime},${endDate},${EndTime},${carType}`;
 
     // Create a download link for the CSV file
     const link = document.createElement('a');
