@@ -73,8 +73,10 @@ const enBtn = document.getElementById('en-btn');
 const frBtn = document.getElementById('fr-btn');
 const translatableElements = document.querySelectorAll('[data-key]');
 
-enBtn.addEventListener('click', () => switchLanguage('en'));
-frBtn.addEventListener('click', () => switchLanguage('fr'));
+if (enBtn && frBtn) {
+    enBtn.addEventListener('click', () => switchLanguage('en'));
+    frBtn.addEventListener('click', () => switchLanguage('fr'));
+}
 
 function switchLanguage(lang) {
     translatableElements.forEach((el) => {
@@ -87,26 +89,34 @@ function switchLanguage(lang) {
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('car-rental-form');
     
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        var formData = new FormData(form);
-        
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                alert('Thank you for your submission!');
-                form.reset();
-            } else {
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for your submission!');
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('There was a problem with your submission.');
+                        }
+                    });
+                }
+            }).catch(error => {
                 alert('There was a problem with your submission.');
-            }
-        }).catch(error => {
-            alert('There was a problem with your submission.');
+                console.error('Form submission error:', error);
+            });
         });
-    });
+    }
 });
-
