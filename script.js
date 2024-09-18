@@ -98,7 +98,7 @@ form.addEventListener('submit', (e) => {
     const carType = document.getElementById('car-type').value;
 
     // Create CSV content
-    const csvContent = `Name,Phone,Start Date, Start Time, End Date, End Time, Car Type\n${name},${phone},${startDate},${StartTime},${endDate},${EndTime},${carType}`;
+    const csvContent = `Name,Phone,Start Date, Start Time, End Date, End Time, Car Type\n${name},${phone},${startDate},${startTime},${endDate},${endTime},${carType}`;
 
     // Create a download link for the CSV file
     const link = document.createElement('a');
